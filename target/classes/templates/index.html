@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>File System Viewer</title>
+</head>
+<body>
+    <h1>File System</h1>
+    <div>
+        <ul>
+            <li th:each="dir : ${directory.subDirectories}">
+                <strong th:text="${dir.name}"></strong>
+                <ul>
+                    <li th:each="file : ${dir.files}" th:text="${file.name}"></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
